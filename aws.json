@@ -9,7 +9,7 @@
       "access_key": "{{user `aws_access_key`}}",
       "secret_key": "{{user `aws_secret_key` }}",
       "region": "us-east-1",
-      "source_ami": "ami-4ae27e22",
+      "source_ami": "ami-30d0b458",
       "instance_type": "m3.medium",
       "ssh_username": "ubuntu",
       "ami_name": "base-curbuntu {{timestamp}}"
@@ -20,20 +20,15 @@
       "type": "shell",
       "inline": [
         "sudo apt-get -y install software-properties-common",
-        "sudo apt-add-repository ppa:ansible/ansible",
+        "sudo apt-add-repository -y ppa:ansible/ansible",
         "sudo apt-get update",
         "sudo apt-get -y install ansible"
       ]
     },
     {
       "type": "ansible-local",
-      "playbook_file": "playbook.yml"
-    },
-    {
-      "type": "shell",
-      "inline":[
-        "sudo apt-get remove --auto-remove ansible"
-      ]
+      "playbook_file": "playbook.yml",
+      "role_paths":"roles/base"
     }
   ]
 }
