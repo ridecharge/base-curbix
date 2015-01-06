@@ -2,4 +2,4 @@
 ---
 - src: git+git@github.com:ridecharge/base-ansible-role.git
   path: roles
-  name: base-role
+  name: base
