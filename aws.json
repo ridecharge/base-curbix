@@ -1,0 +1,39 @@
+{
+  "variables": {
+    "aws_access_key": "",
+    "aws_secret_key": ""
+  },
+  "builders": [
+    {
+      "type": "amazon-ebs",
+      "access_key": "{{user `aws_access_key`}}",
+      "secret_key": "{{user `aws_secret_key` }}",
+      "region": "us-east-1",
+      "source_ami": "ami-4ae27e22",
+      "instance_type": "m3.medium",
+      "ssh_username": "ubuntu",
+      "ami_name": "base-curbuntu {{timestamp}}"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+        "sudo apt-get -y install software-properties-common",
+        "sudo apt-add-repository ppa:ansible/ansible",
+        "sudo apt-get update",
+        "sudo apt-get -y install ansible"
+      ]
+    },
+    {
+      "type": "ansible-local",
+      "playbook_file": "local.yml"
+    },
+    {
+      "type": "shell",
+      "inline":[
+        "sudo apt-get remove --auto-remove ansible"
+      ]
+    }
+  ]
+}
