@@ -3,3 +3,7 @@
 - src: git+git@github.com:ridecharge/base-ansible-role.git
   path: roles
   name: base
+
+- src: git+git@github.com:ridecharge/ntp-ansible-role.git
+  path: roles
+  name: ntp
