@@ -1,6 +1,6 @@
 ---
 # For use with packer and ansible-local provisioner.
-- hosts: 127.0.0.1
+- hosts: all
   connection: local
   sudo: yes
   roles:
