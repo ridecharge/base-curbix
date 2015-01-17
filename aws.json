@@ -54,7 +54,11 @@
     {
       "type": "ansible-local",
       "playbook_file": "playbook.yml",
-      "role_paths": ["roles/base","roles/ntp"]
+      "role_paths": [
+        "roles/base",
+        "roles/ntp",
+        "roles/python3"
+      ]
     }
   ]
 }
