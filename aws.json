@@ -41,10 +41,10 @@
     },
     {
       "type": "shell",
-      "inline": [
+      "inline": [        
         "su - << EOF",
         "pkg install -y sudo python ansible",
-        "echo \"%wheel ALL=(ALL) NOPASSWD: ALL\" >> /usr/local/etc/sudoers",
+        "echo \"%wheel ALL=(ALL) NOPASSWD: ALL\" >> /usr/local/etc/sudoers.d/wheel",
         "EOF"
       ],
       "only": [
