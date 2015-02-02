@@ -1,7 +1,8 @@
 {
   "variables": {
     "aws_access_key": "",
-    "aws_secret_key": ""
+    "aws_secret_key": "",
+    "loggly_token":"e8bcd155-264b-4ec0-88be-fcb023f76a89"
   },
   "builders": [
     {
@@ -34,7 +35,7 @@
         "sudo apt-add-repository -y ppa:ansible/ansible",
         "sudo apt-get update",
         "sudo apt-get -y install ansible"
-      ],
+        ],
       "only": [
         "ubuntu14lts"
       ]
@@ -57,7 +58,17 @@
       "role_paths": [
         "roles/base",
         "roles/ntp",
-        "roles/python3"
+        "roles/python3",
+        "roles/logging"
+      ]
+    },
+    {
+      "type": "shell",
+      "inline": [
+        "sudo docker run -d -p 127.0.0.1:514:514 --restart=always -e TOKEN={{user `loggly_token` }} sgarlick987/logging"
+      ],
+      "only": [
+        "ubuntu14lts"
       ]
     }
   ]
