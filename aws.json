@@ -65,7 +65,7 @@
     {
       "type": "shell",
       "inline": [
-        "sudo docker run -d -p 127.0.0.1:514:514 --restart=always -e TOKEN={{user `loggly_token` }} sgarlick987/logging"
+        "sudo docker run -d -p 127.0.0.1:514:514 --restart=always -e LOGGLY_TOKEN={{user `loggly_token` }} sgarlick987/logging"
       ],
       "only": [
         "ubuntu14lts"
