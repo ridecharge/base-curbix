@@ -11,7 +11,7 @@
       "access_key": "{{user `aws_access_key`}}",
       "secret_key": "{{user `aws_secret_key` }}",
       "region": "us-east-1",
-      "source_ami": "ami-4ae27e22",
+      "source_ami": "ami-9a562df2",
       "instance_type": "m3.medium",
       "ssh_username": "ubuntu",
       "ami_name": "base-curbix Ubuntu 14.04.1 LTS {{timestamp}}"
@@ -65,7 +65,8 @@
     {
       "type": "shell",
       "inline": [
-        "sudo docker run -d -p 127.0.0.1:514:514 --restart=always -e LOGGLY_TOKEN={{user `loggly_token` }} sgarlick987/logging"
+        "sudo service docker restart",
+        "sudo docker run -d -p 127.0.0.1:514:514 --name logging --restart=always -e LOGGLY_TOKEN={{user `loggly_token` }} sgarlick987/logging"
       ],
       "only": [
         "ubuntu14lts"
