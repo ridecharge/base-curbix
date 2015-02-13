@@ -76,7 +76,7 @@
       "type": "shell",
       "inline": [
         "curl -sSL https://get.docker.com/ubuntu/ | sudo sh",
-        "sudo docker run -d -p 127.0.0.1:514:514/udp --name logging --restart=always -e LOGGLY_TOKEN={{user `loggly_token` }} sgarlick987/logging"
+        "sudo docker pull sgarlick987/logging"
       ],
       "only": [
         "ubuntu14lts"
