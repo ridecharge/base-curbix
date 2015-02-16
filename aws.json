@@ -1,8 +1,7 @@
 {
   "variables": {
     "aws_access_key": "",
-    "aws_secret_key": "",
-    "loggly_token":"e8bcd155-264b-4ec0-88be-fcb023f76a89"
+    "aws_secret_key": ""
   },
   "builders": [
     {
