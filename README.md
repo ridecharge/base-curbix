@@ -4,8 +4,8 @@
 This is the base image to be used for all other images in the curbformation environment.  
 
 It currently runs Ubuntu 14.04 LTS and provides the follow services exposed as docker containers to be linked against:
-* statsd (statsd-docker repo) for metrics
-* logging (logging-docker repo) for syslog
+* statsd (statsd-docker repo) for librato metrics service
+* logging (logging-docker repo) for syslog service
 * consul (consul-docker repo) for autodiscovery service
 * aws-startup-utils (aws-startup-utils-docker repo) utility scripts for ec2 server startup actions
 
