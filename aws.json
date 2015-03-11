@@ -77,6 +77,7 @@
         "curl -sSL https://get.docker.com/ubuntu/ | sudo sh",
         "sudo docker pull sgarlick987/logging",
         "sudo docker pull sgarlick987/aws-startup-utils",
+        "sudo docker pull sgarlick987/statsd",
         "sudo docker pull sgarlick987/consul"
       ],
       "only": [
