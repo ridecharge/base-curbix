@@ -60,25 +60,6 @@
         "roles/python3",
         "roles/logging"
       ]
-    },
-    {
-      "type": "shell",
-      "inline": [
-        "sudo reboot",
-        "sleep 60"
-         ],
-      "only": [
-        "ubuntu14lts"
-      ]
-    },
-    {
-      "type": "shell",
-      "inline": [
-        "curl -sSL https://get.docker.com/ubuntu/ | sudo sh"
-      ],
-      "only": [
-        "ubuntu14lts"
-      ]
     }
   ]
 }
