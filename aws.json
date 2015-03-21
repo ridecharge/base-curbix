@@ -34,14 +34,14 @@
         "sudo apt-add-repository -y ppa:ansible/ansible",
         "sudo apt-get update",
         "sudo apt-get -y install ansible"
-        ],
+      ],
       "only": [
         "ubuntu14lts"
       ]
     },
     {
       "type": "shell",
-      "inline": [        
+      "inline": [
         "su - << EOF",
         "pkg install -y sudo python ansible",
         "echo \"%wheel ALL=(ALL) NOPASSWD: ALL\" >> /usr/local/etc/sudoers.d/wheel",
