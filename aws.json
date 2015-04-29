@@ -13,7 +13,17 @@
       "source_ami": "ami-cc3b3ea4",
       "instance_type": "m3.medium",
       "ssh_username": "ubuntu",
-      "ami_name": "base-curbix Ubuntu 14.04.1 LTS {{timestamp}}"
+      "ami_name": "base-curbix Ubuntu 14.04.1 LTS {{timestamp}}",
+       "ami_block_device_mappings": [ {
+            "device_name": "/dev/sda1",
+            "volume_size": 64,
+            "delete_on_termination": true
+        } ],
+        "launch_block_device_mappings": [ {
+            "device_name": "/dev/sda1",
+            "volume_size": 64,
+            "delete_on_termination": true
+        } ]
     },
     {
       "type": "amazon-ebs",
