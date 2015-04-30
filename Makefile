@@ -14,5 +14,5 @@ packer:
 	packer build -only=ubuntu14lts aws.json
 
 cleanup:
-	docker rmi $(CONTAINER)
+	docker rmi -f $(CONTAINER)
 	rm -r roles
